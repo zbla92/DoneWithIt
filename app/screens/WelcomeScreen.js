@@ -32,7 +32,7 @@ export default function WelcomeScreen({ viewImagePage }) {
         <AppButton
           title="Gallery View"
           onPress={viewImagePage}
-          className={{ backgroundColor: colors.secondary }}
+          style={{ backgroundColor: colors.secondary }}
         />
       </View>
     </ImageBackground>

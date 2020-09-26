@@ -8,6 +8,9 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+import ListItemDeleteAction from "../components/ListItemDeleteAction";
 
 import colors from "../config/colors";
 
@@ -16,13 +19,12 @@ const image = require("../assets/chair.jpg");
 export default function ViewImageScreen({ viewImagePage }) {
   return (
     <View style={styles.container}>
-      <TouchableHighlight
-        onPress={viewImagePage}
-        style={[styles.buttonBox, styles.btnLeft]}
-      >
-        <Text>X</Text>
+      <TouchableHighlight onPress={viewImagePage} style={styles.btnClose}>
+        <MaterialCommunityIcons name="close" color="white" size={30} />
       </TouchableHighlight>
-      <View style={[styles.buttonBox, styles.btnRight]}></View>
+      <TouchableHighlight style={styles.btnDelete}>
+        <MaterialCommunityIcons name="delete" color="white" size={30} />
+      </TouchableHighlight>
       <Image source={image} style={styles.image} resizeMode="contain" />
     </View>
   );
@@ -31,16 +33,13 @@ export default function ViewImageScreen({ viewImagePage }) {
 const styles = StyleSheet.create({
   container: { backgroundColor: "black", flex: 1 },
   image: { width: "100%", height: "100%" },
-
-  buttonBox: { width: 50, height: 50, zIndex: 1 },
-  btnLeft: {
-    backgroundColor: colors.primary,
+  btnClose: {
     position: "absolute",
     top: 40,
     left: 30,
+    zIndex: 2,
   },
-  btnRight: {
-    backgroundColor: colors.secondary,
+  btnDelete: {
     position: "absolute",
     top: 40,
     right: 30,
