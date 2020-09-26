@@ -9,11 +9,13 @@ import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 import colors from "./app/config/colors";
 import AccountScreen from "./app/components/AccountScreen";
 import ListingsScreen from "./app/components/ListingsScreen";
+import AppTextInput from "./app/components/AppTextInput";
+import Screen from "./app/components/Screen";
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState(4);
   return (
-    <View style={styles.container}>
+    <Screen>
       {/* {activeScreen === 1 && (
         <WelcomeScreen viewImagePage={() => setActiveScreen(2)} />
       )}
@@ -24,15 +26,15 @@ export default function App() {
         <ListingDetailsScreen title="Some cocaine " price={100} />
       )}
       {activeScreen == 4 && <MessageScreen title="Some cocaine " price={100} />} */}
-      <ListingsScreen />
+      <AppTextInput placeholder="Username" icon="email" />
       <StatusBar style="auto" />
-    </View>
+    </Screen>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: colors.black, // temporary battery drain solution
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     // backgroundColor: colors.black, // temporary battery drain solution
+//   },
+// });
