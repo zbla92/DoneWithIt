@@ -3,8 +3,8 @@ import { View, StyleSheet, Image } from "react-native";
 
 import colors from "../config/colors";
 
-import ListItem from "./ListItem";
-import AppText from "./AppText";
+import ListItem from "../components/ListItem";
+import AppText from "../components/AppText";
 
 export default function ({ title, price }) {
   return (

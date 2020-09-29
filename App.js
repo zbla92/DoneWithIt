@@ -1,21 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import ViewImageScreen from './app/screens/ViewImageScreen';
 
-import MessageScreen from "./app/screens/MessagesSceen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
-import colors from "./app/config/colors";
-import AccountScreen from "./app/components/AccountScreen";
-import ListingsScreen from "./app/components/ListingsScreen";
-import AppTextInput from "./app/components/AppTextInput";
-import Screen from "./app/components/Screen";
-import AppPicker from "./app/components/AppPicker";
-import AppText from "./app/components/AppText";
+import MessageScreen from './app/screens/MessagesSceen';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
+import colors from './app/config/colors';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/components/AppTextInput';
+import Screen from './app/components/Screen';
+import AppPicker from './app/components/AppPicker';
+import AppText from './app/components/AppText';
+import LoginScreen from './app/screens/LoginScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState(4);
+
   return (
     <Screen style={styles.container}>
       {/* {activeScreen === 1 && (
@@ -29,9 +31,17 @@ export default function App() {
       )}
       {activeScreen == 4 && <MessageScreen title="Some cocaine " price={100} />} */}
 
-      <AppPicker icon="apps" placeholder="Category" />
-      <AppTextInput icon="email" placeholder="email" />
-      <StatusBar style="auto" />
+      {/* <AppPicker
+        icon="apps"
+        placeholder="Category"
+        items={categories}
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+      /> */}
+      {/* <AppTextInput icon="email" placeholder="email" /> */}
+      {/* <LoginScreen /> */}
+      <ListingEditScreen />
+      {/* <MessageScreen /> */}
     </Screen>
   );
 }
