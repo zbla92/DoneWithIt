@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
+import * as ImagePicker from 'expo-image-picker';
+
 import colors from '../config/colors';
 
 import Screen from '../components/Screen';
 
-import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
+import ImageInput from '../components/ImageInput';
+import ImageInputList from '../components/ImageInputlist';
 
 export default function App() {
-  const [image, setImage] = useState(null);
+  const [images, setImages] = useState([]);
 
-  const requestPermission = async () => {
-    const result = await ImagePicker.requestCameraRollPermissionsAsync();
-    if (!result.granted)
-      alert('Bruh enable that shit, I aint looking your small dick pics.');
-  };
-
-  const selectImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync();
-    if (!result.cancelled) setImage(result.uri);
-  };
-
-  useEffect(() => {
-    requestPermission();
-  }, []);
-  console.log(image, ' image');
   return (
     <Screen style={styles.container}>
-      <Button title='Select an image' onPress={selectImage} />
-      <Image style={styles.image} source={{ uri: image }} />
+      <ImageInputList
+        imageUris={images}
+        onRemoveImage={(uri) => {
+          console.log(
+            'yeah it happened',
+            images.filter((image) => {
+              console.log(image, uri);
+            })
+          );
+          return setImages(images.filter((image) => uri !== image));
+        }}
+        onAddImage={(newImage) => setImages([...images, newImage])}
+      />
     </Screen>
   );
 }
