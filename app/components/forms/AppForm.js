@@ -1,7 +1,7 @@
-import React from "react";
-import { Formik } from "formik";
+import React from 'react';
+import { Formik } from 'formik';
 
-export default function ({
+export default function AppForm({
   initialValues,
   onSubmit,
   validationSchema,

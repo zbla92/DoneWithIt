@@ -1,33 +1,33 @@
-import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import React from 'react';
+import { StyleSheet, View, FlatList } from 'react-native';
 
-import Screen from "../components/Screen";
-import ListItem from "../components/ListItem";
-import Icon from "../components/Icon";
+import Screen from '../components/Screen';
+import ListItem from '../components/ListItem';
+import Icon from '../components/Icon';
 
-import colors from "../config/colors";
+import colors from '../config/colors';
 
 const menuItems = [
   {
-    title: "My Listings",
-    icon: { name: "format-list-bulleted", backgroundColor: colors.primary },
+    title: 'My Listings',
+    icon: { name: 'format-list-bulleted', backgroundColor: colors.primary },
   },
   {
-    title: "My Messages",
-    icon: { name: "email", backgroundColor: colors.secondary },
+    title: 'My Messages',
+    icon: { name: 'email', backgroundColor: colors.secondary },
   },
 ];
 
-export default function () {
+export default function AccountScreen() {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Milan Blaz"
-          subtitle="milan@vivant.eco"
+          title='Milan Blaz'
+          subtitle='milan@vivant.eco'
           image={{
             uri:
-              "https://avatars2.githubusercontent.com/u/34164504?s=460&u=759fbffbe4782d914a6014855e7e8a5034230960&v=4",
+              'https://avatars2.githubusercontent.com/u/34164504?s=460&u=759fbffbe4782d914a6014855e7e8a5034230960&v=4',
           }}
         />
       </View>
@@ -49,8 +49,8 @@ export default function () {
         />
       </View>
       <ListItem
-        title="Logout"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        title='Logout'
+        IconComponent={<Icon name='logout' backgroundColor='#ffe66d' />}
       />
     </Screen>
   );

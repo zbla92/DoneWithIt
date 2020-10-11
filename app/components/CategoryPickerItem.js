@@ -5,7 +5,7 @@ import Icon from './Icon';
 import ListItemDeleteAction from './ListItemDeleteAction';
 import AppText from './AppText';
 
-export default function ({ item, onPress }) {
+export default function CategoryPickerItem({ item, onPress }) {
   console.log(item, 'item');
   return (
     <View style={styles.container}>

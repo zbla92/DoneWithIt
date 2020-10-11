@@ -52,7 +52,7 @@ const initialMessages = [
   },
 ];
 
-export default function ({}) {
+export default function MessagesScreen({}) {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
 

@@ -20,6 +20,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.black, // temporary battery drain solution
+    // backgroundColor: colors.black, // temporary battery drain solution
   },
 });

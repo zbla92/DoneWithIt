@@ -9,25 +9,14 @@ import Screen from '../components/Screen';
 
 import ImageInput from '../components/ImageInput';
 import ImageInputList from '../components/ImageInputlist';
+import ListingEditScreen from '../screens/ListingEditScreen';
 
-export default function App() {
+export default function Test() {
   const [images, setImages] = useState([]);
 
   return (
     <Screen style={styles.container}>
-      <ImageInputList
-        imageUris={images}
-        onRemoveImage={(uri) => {
-          console.log(
-            'yeah it happened',
-            images.filter((image) => {
-              console.log(image, uri);
-            })
-          );
-          return setImages(images.filter((image) => uri !== image));
-        }}
-        onAddImage={(newImage) => setImages([...images, newImage])}
-      />
+      <ListingEditScreen />
     </Screen>
   );
 }
@@ -35,7 +24,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.black, // temporary battery drain solution
+    // backgroundColor: colors.black, // temporary battery drain solution
   },
   image: { width: '100%', height: '100%' },
 });

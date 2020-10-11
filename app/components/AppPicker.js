@@ -15,7 +15,7 @@ import defaultStyles from '../config/styles';
 import AppText from './AppText';
 import PickerItem from './PickerItem';
 
-export default function ({
+export default function AppPicker({
   icon,
   placeholder,
   items,

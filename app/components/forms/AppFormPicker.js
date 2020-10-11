@@ -4,7 +4,7 @@ import { useFormikContext } from 'formik';
 import AppPicker from '../AppPicker';
 import ErrorMessage from './ErrorMessage';
 
-export default function ({
+export default function AppFormPicker({
   items,
   name,
   PickerItemComponent,

@@ -1,50 +1,50 @@
-import React from "react";
-import { StyleSheet, Image } from "react-native";
+import React from 'react';
+import { StyleSheet, Image } from 'react-native';
 
-import * as Yup from "yup";
+import * as Yup from 'yup';
 
-import Screen from "../components/Screen";
-import AppText from "../components/AppText";
+import Screen from '../components/Screen';
+import AppText from '../components/AppText';
 import {
   AppForm,
   AppFormField,
   ErrorMessage,
   SubmitButton,
-} from "../components/forms";
+} from '../components/forms';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().required().email().label("Email"),
-  password: Yup.string().required().min(4).label("Password"),
+  email: Yup.string().required().email().label('Email'),
+  password: Yup.string().required().min(4).label('Password'),
 });
 
-export default function () {
+export default function LoginScreen() {
   return (
     <Screen style={styles.container}>
-      <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+      <Image style={styles.logo} source={require('../assets/logo-red.png')} />
       <AppForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: '', password: '' }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
         <AppFormField
-          icon="email"
-          name="email"
-          autoCapitalize="none"
+          icon='email'
+          name='email'
+          autoCapitalize='none'
           autoCorrect={false}
-          keyboardType="email-address"
-          placeholder="Email"
-          textContentType="emailAddress"
+          keyboardType='email-address'
+          placeholder='Email'
+          textContentType='emailAddress'
         />
         <AppFormField
-          icon="lock"
-          name="password"
-          autoCapitalize="none"
+          icon='lock'
+          name='password'
+          autoCapitalize='none'
           autoCorrect={false}
           secureTextEntry
-          placeholder="Password"
-          textContentType="password"
+          placeholder='Password'
+          textContentType='password'
         />
-        <SubmitButton title="Login" />
+        <SubmitButton title='Login' />
       </AppForm>
     </Screen>
   );
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   logo: {
     height: 80,
     width: 80,
-    alignSelf: "center",
+    alignSelf: 'center',
     marginTop: 50,
     marginBottom: 20,
   },
